@@ -8,8 +8,10 @@ const calculator = (n1, n2, operator) => {
       return n1 / n2;
     case "*":
       return n1 * n2;
+    default:
+      throw new Error("Invalid operator");
   }
 };
-console.log(calculator(2, 51, "-"));
+console.log(calculator(12, 7, "+"));
 
 module.exports = calculator;
