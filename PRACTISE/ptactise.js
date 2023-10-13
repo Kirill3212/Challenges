@@ -1,7 +1,9 @@
-function practise() {
-  for (let line = "#"; line.length < 8; line += "#") {
-    console.log(line);
-  }
-}
+let obj = {
+  car: "Porshe",
+  number: 123,
+};
 
-console.log(practise());
+let copy = Object.assign({}, obj);
+obj.name = "Elen";
+
+console.log(copy);
