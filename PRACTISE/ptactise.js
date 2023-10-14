@@ -1,9 +1,16 @@
-let obj = {
-  car: "Porshe",
-  number: 123,
-};
+const obj = [
+  0,
+  -1,
+  "",
+  "0",
+  {},
+  { x: 0 },
+  [],
+  [0],
+  null,
+  undefined,
+  () => {},
+  () => 0,
+];
 
-let copy = Object.assign({}, obj);
-obj.name = "Elen";
-
-console.log(copy);
+console.log(obj.filter(Boolean));
