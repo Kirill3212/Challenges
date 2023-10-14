@@ -1,21 +1,14 @@
 function cakes(recipe, available) {
-  let maxCakes;
+  let arr = Object.keys(recipe);
 
-  for (var ingredient in recipe) {
-    if (available[ingredient]) {
-      const possibleCakes = Math.floor(
-        available[ingredient] / recipe[ingredient] || 0
-      );
+  let reducedArr = arr.reduce(function (val, ingredient) {
+    return Math.min(
+      Math.floor(available[ingredient] / recipe[ingredient] || 0),
+      val
+    );
+  }, Infinity);
 
-      if (!maxCakes || possibleCakes < maxCakes) {
-        maxCakes = possibleCakes;
-      }
-    } else {
-      return 0;
-    }
-  }
-
-  return maxCakes;
+  console.log(arr);
 }
 
 console.log(
