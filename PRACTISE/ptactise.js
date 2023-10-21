@@ -1,27 +1,30 @@
-function mergeSort(arr) {
-  if (arr.length < 2) {
-    return arr;
-  }
+const person1 = {
+  age: 20,
+};
 
-  const mid = Math.floor(arr.length / 2);
-  const leftArr = arr.slice(0, mid);
-  const rightArr = arr.slice(mid);
+const person2 = {
+  age: 23,
+  name: "Alice",
+};
 
-  return merge(mergeSort(leftArr), mergeSort(rightArr));
+const person3 = {
+  age: 27,
+  name: "Amanda",
+  surname: "Jones",
+};
+
+function CreatePerson(age, surname, name) {
+  (this.name = name ? name : null), (this.surname = surname ? surname : null);
+  this.age = age;
 }
 
-function merge(leftArr, rightArr) {
-  const sortedArr = [];
+const newPerson1 = new CreatePerson(33, "Snowden", "Edward");
+console.log(newPerson1);
 
-  while (leftArr.length && rightArr.length) {
-    if (leftArr[0] <= rightArr[0]) {
-      sortedArr.push(leftArr.shift());
-    } else {
-      sortedArr.push(rightArr.shift());
-    }
-  }
+const setNewPerson = (age) => {
+  CreatePerson.call(person1, age);
+};
 
-  return [...sortedArr, ...rightArr, ...leftArr];
-}
+const result = setNewPerson(23);
 
-console.log(mergeSort([-2, 5, 3, 15, -7, 23, 100, -90]));
+console.log(result);
