@@ -3,20 +3,16 @@ function zeros(n) {
   let sum = 0;
 
   while (divider <= n) {
+    console.log("sum - " + sum);
+    console.log("divider - " + divider);
+    console.log("sum after floor - " + Math.floor(sum + n / (divider *= 5)));
+
     sum = Math.floor(sum + n / (divider *= 5));
   }
   return sum;
 }
 
 console.log(zeros(1000));
-
-// let divider = 1;
-// let sum = 0;
-
-// while (divider <= n) {
-//   sum = Math.floor(sum + n / (divider *= 5));
-// }
-// return sum;
 
 // let result = "";
 // let bigCycle = 0;
